@@ -1,18 +1,18 @@
-interface KuantumBilgisayarCercevesi //interface arabirim--Kuantum bilgisayarının temel davranışlarını tanımlar. Bu davranışlar, kuantum durumu başlatma, kuantum kapısı uygulama ve kuantum durumu ölçme işlemlerini içerir.
+interface KuantumBilgisayarCercevesi 
 {
     void kuantumDurumBaslat();
     void kuantumKapisiUygula(string kapiTuru);
     void kuantumDurumuOlc();
 }
 
-enum KuantumKapiTuru //enum-- Kuantum kapılarının türlerini tanımlar.
+enum KuantumKapiTuru 
 {
     HADAMARD, CNOT, RY
 }
 
-abstract class KuantumBilgisayari : KuantumBilgisayarCercevesi //soyut sınıf--Temel soyut sınıftır ve KuantumBilgisayarCercevesi arayüzünü uygular
+abstract class KuantumBilgisayari : KuantumBilgisayarCercevesi 
 {
-    // Constructor ve diğer soyut metodları içerir.
+    
     public string model;
     public int qubitSayisi;
     public KuantumKapiTuru kapiTuru;
@@ -43,7 +43,7 @@ abstract class KuantumBilgisayari : KuantumBilgisayarCercevesi //soyut sınıf--
 
 }
 
- class EvrenselKuantumBilgisayari : KuantumBilgisayari //KuantumBilgisayari sınıfından türetilmiş bir sınıftır. Ek olarak, hataDuzeltmeEtkin adlı bir özellik içerir.
+ class EvrenselKuantumBilgisayari : KuantumBilgisayari 
 {
     // Constructor ve soyut metodları implemente eder.
     
@@ -82,7 +82,7 @@ abstract class KuantumBilgisayari : KuantumBilgisayarCercevesi //soyut sınıf--
     }
 }
 
-class KuantumSimulator : KuantumBilgisayari //KuantumBilgisayari sınıfından türetilmiş bir sınıftır ve superpozisyonEtkin adlı bir özellik içerir.
+class KuantumSimulator : KuantumBilgisayari 
 {
     // Constructor ve soyut metodları implemente eder.
     
@@ -163,7 +163,8 @@ internal class Program
 
        
 
-        KuantumBilgisayarCercevesi[] interfaces = { ekb, ks};//upcasting Burada, ekb ve ks nesneleri KuantumBilgisayarCercevesi arabirimine sahip oldukları için bu nesneleri KuantumBilgisayarCercevesi türündeki bir diziye atanir. 
+        KuantumBilgisayarCercevesi[] interfaces = { ekb, ks};//upcasting Burada, ekb ve ks nesneleri KuantumBilgisayarCercevesi 
+        //arabirimine sahip oldukları için bu nesneleri KuantumBilgisayarCercevesi türündeki bir diziye atanir. 
         Console.WriteLine("downcasting\n");
 
         EvrenselKuantumBilgisayari cerceve = (EvrenselKuantumBilgisayari)ekb; //downcasting
