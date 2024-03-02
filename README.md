@@ -1,1 +1,1 @@
-OOP örneği
+OOP örneği.
